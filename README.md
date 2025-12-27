@@ -1,4 +1,4 @@
-# Self-hosted AI starter kit
+# Self-hosted AI kit
 
 **Self-hosted AI Starter Kit** is an open-source Docker Compose template designed to swiftly initialize a comprehensive local AI and low-code development environment.
 
@@ -34,8 +34,8 @@ from PowerShell or CMD run the following
 
 #### For Nvidia GPU users
 
-git clone https://github.com/hosamzein/joc-self-hosted-ai-starter-kit.git
-cd joc-self-hosted-ai-starter-kit
+git clone https://github.com/hosamzein/self-hosted-ai-kit.git
+cd self-hosted-ai-kit
 cp .env.example .env
 docker compose --profile gpu-nvidia up
 
@@ -44,8 +44,8 @@ docker compose --profile gpu-nvidia up
 
 ### For AMD GPU users on Linux
 
-git clone https://github.com/hosamzein/joc-self-hosted-ai-starter-kit.git
-cd joc-self-hosted-ai-starter-kit
+git clone https://github.com/hosamzein/self-hosted-ai-kit.git
+cd self-hosted-ai-kit
 cp .env.example .env
 docker compose --profile gpu-amd up
 
@@ -58,8 +58,8 @@ If you're using a Mac with an M1 or newer processor, you can't expose your GPU t
 
 If you want to run Ollama on your Mac, check the [Ollama homepage](https://ollama.com/) for installation instructions, and run the starter kit as follows:
 
-git clone https://github.com/hossamzein/joc-self-hosted-ai-starter-kit.git
-cd joc-self-hosted-ai-starter-kit
+git clone https://github.com/hossamzein/self-hosted-ai-kit.git
+cd self-hosted-ai-kit
 cp .env.example .env
 docker compose up
 
@@ -76,8 +76,8 @@ If you're running OLLAMA locally on your Mac (not in Docker), you need to modify
 
 #### For everyone else
 
-git clone https://github.com/n8n-io/joc-self-hosted-ai-starter-kit.git
-cd joc-self-hosted-ai-starter-kit
+git clone https://github.com/n8n-io/self-hosted-ai-kit.git
+cd self-hosted-ai-kit
 cp .env.example .env
 docker compose --profile cpu up
 
