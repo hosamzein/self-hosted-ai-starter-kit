@@ -31,7 +31,9 @@ Engineering world, handles large amounts of data safely.
 ⭐️ **Private Financial Document Analysis** at minimal cost
 
 ## Installation
-instal [**Git**]([https://www.postgresql.org/](https://git-scm.com/install/)) 
+instal [**Git**](https://git-scm.com/install/)
+from powershell or CMD run the following 
+
 #### For Nvidia GPU users
 
 ```bash
