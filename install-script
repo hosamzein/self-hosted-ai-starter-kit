@@ -65,7 +65,7 @@ fi
 cd self-hosted-ai-kit
 cp -n .env.example .env
 
-sudo docker compose --profile gpu-nvidia up -d
+sudo docker compose --profile cpu up -d
 # replace gpu-nvidia with cpu if necessary nad recommended to rely on ollama install version not container to get use of your gpu with direct access
 # -----------------------------
 # 6) Final message (Portainer link)
