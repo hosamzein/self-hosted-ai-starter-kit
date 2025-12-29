@@ -28,8 +28,14 @@
 
 ⭐️ **Interactive AI Chat** with local LLMs through Open WebUI
 
-## Installation
-Install [**Git**](https://git-scm.com/install/)
+## Installation (ubuntu server) 
+
+
+
+
+## Installation (windows)
+Install docker desktop
+Install [**Git**](https://git-scm.com/install/) at windows
 from PowerShell or CMD run the following 
 
 ### For Nvidia GPU users
