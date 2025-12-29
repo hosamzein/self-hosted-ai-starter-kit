@@ -65,7 +65,10 @@ fi
 cd self-hosted-ai-kit
 cp -n .env.example .env
 
-sudo docker compose --profile gpu-nvidia up -d
+# choose only one of three options
+sudo docker compose --profile cpu up -d
+#sudo docker compose --profile gpu-nvidia up -d
+#sudo docker compose --profile gpu-amd up -d
 
 # -----------------------------
 # 6) Restart Portainer (Security timeout fix) [web:219]
