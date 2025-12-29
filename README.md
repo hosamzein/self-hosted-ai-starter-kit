@@ -20,7 +20,7 @@
 ⭐️ **Private Financial Document Analysis** at minimal cost
 ⭐️ **Interactive AI Chat** with local LLMs through Open WebUI
 
-## onclick Installation (ubuntu server) copy all and run at cli
+## onclick Installation (ubuntu server) with portainer manager.
 sudo apt install -y wget && cd ~ && wget -O install_script.sh "https://raw.githubusercontent.com/hosamzein/self-hosted-ai-kit/refs/heads/main/install-script" && chmod +x install_script.sh && sudo bash ./install_script.sh
 
 ## Installation (windows)
