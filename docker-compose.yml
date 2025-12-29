@@ -58,9 +58,9 @@ services:
     networks: ['network']
     restart: unless-stopped
     environment:
-      - POSTGRES_USER
-      - POSTGRES_PASSWORD
-      - POSTGRES_DB
+      - POSTGRES_USER=admin1
+      - POSTGRES_PASSWORD-Admin1@postgres
+      - POSTGRES_DB=n8n
     volumes:
       - postgres_storage:/var/lib/postgresql/data
     healthcheck:
