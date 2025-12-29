@@ -7,47 +7,21 @@
 ### What's included
 
 ✅ [**Self-hosted n8n**](https://n8n.io/) - Low-code platform with over 400 integrations and advanced AI components
-
 ✅ [**Ollama**](https://ollama.com/) - Cross-platform LLM platform to install and run the latest local LLMs
-
 ✅ [**Open WebUI**](https://openwebui.com/) - User-friendly web interface for chatting with Ollama models (ChatGPT-like experience)
-
 ✅ [**Qdrant**](https://qdrant.tech/) - Open-source, high performance vector store with an comprehensive API
-
 ✅ [**PostgreSQL**](https://www.postgresql.org/) - Workhorse of the Data Engineering world, handles large amounts of data safely.
 
 ### What you can build
 
 ⭐️ **AI Agents** for scheduling appointments
-
 ⭐️ **Summarize Company PDFs** securely without data leaks
-
 ⭐️ **Smarter Slack Bots** for enhanced company communications and IT operations
-
 ⭐️ **Private Financial Document Analysis** at minimal cost
-
 ⭐️ **Interactive AI Chat** with local LLMs through Open WebUI
 
 ## onclick Installation (ubuntu server) copy all and run at cli
-
-# 1. Clean up old/broken keys and lists
-sudo rm -f /etc/apt/keyrings/docker.asc
-sudo rm -f /etc/apt/sources.list.d/docker.list
-sudo rm -f /etc/apt/sources.list.d/docker.sources
-
-# 2. Create keyring directory
-sudo install -m 0755 -d /etc/apt/keyrings
-
-# 3. Download the Docker GPG key
-sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-# 4. Install Everything and Print Success Message with ollama CPU profile
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && sudo apt update && sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin git && sudo docker volume create portainer_data && sudo docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:lts && git clone https://github.com/hosamzein/self-hosted-ai-kit.git && cd self-hosted-ai-kit && cp .env.example .env && sudo docker compose --profile cpu up -d && export SERVER_IP=$(hostname -I | awk '{print $1}') && echo -e "\n\n✅ \033[0;32mInstallation Complete Successfully!\033[0m\n🚀 Access Portainer here through host browser: \033[0;34mhttps://$SERVER_IP:9443\033[0m\n"
-
-
-
-
+sudo apt install -y wget && cd ~ && wget -O install_script.sh "https://raw.githubusercontent.com/hosamzein/self-hosted-ai-kit/refs/heads/main/install-script" && chmod +x install_script.sh && sudo bash ./install_script.sh
 
 ## Installation (windows)
 Install docker desktop
@@ -56,28 +30,18 @@ from PowerShell or CMD run the following
 
 ### For Nvidia GPU users
 
-git clone https://github.com/hosamzein/self-hosted-ai-kit.git
-
-cd self-hosted-ai-kit
-
-cp .env.example .env
-
-docker compose --profile gpu-nvidia up
+winget install --id Git.Git -e --source winget; $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User"); git clone https://github.com/hosamzein/self-hosted-ai-kit.git; Set-Location self-hosted-ai-kit; Copy-Item .env.example .env; docker compose --profile gpu-nvidia up
 
 > [!NOTE]
 > If you have not used your Nvidia GPU with Docker before, please follow the [Ollama Docker instructions](https://github.com/ollama/ollama/blob/main/docs/docker.md).
 
 ### For AMD GPU users on Linux
 
-git clone https://github.com/hosamzein/self-hosted-ai-kit.git
-cd self-hosted-ai-kit
-cp .env.example .env
-docker compose --profile gpu-amd up
+winget install --id Git.Git -e --source winget; $env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User"); git clone https://github.com/hosamzein/self-hosted-ai-kit.git; Set-Location self-hosted-ai-kit; Copy-Item .env.example .env; docker compose --profile gpu-amd up
 
 #### For Mac / Apple Silicon users
 
 If you're using a Mac with an M1 or newer processor, you can't expose your GPU to the Docker instance, unfortunately. There are two options in this case:
-
 1. Run the starter kit fully on CPU, like in the section "For everyone else" below
 2. Run Ollama on your Mac for faster inference, and connect to that from the n8n instance
 
